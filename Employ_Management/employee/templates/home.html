@@ -8,19 +8,20 @@
     <link rel="stylesheet" href="{% static 'employee/home.css'%}">
 </head>
 <body>
-    <form action="" method="post">
+    <form method="post">
+        {% csrf_token %}
         <table>
             <tr>
                 <td>Employee ID:</td>
-                <td><input type="text" name="emp_id" id="txt0" required></td>
+                <td><input type="number" name="emp_id" id="num1" required></td>
             </tr>
             <tr>
                 <td>Name:</td>
-                <td><input type="text" name="name" id="txt1" required></td>
+                <td><input type="text" name="emp_name" id="txt1" required></td>
             </tr>
             <tr>
                 <td>Designation:</td>
-                <td><input type="text" name="designation" id="txt2" required></td>
+                <td><input type="text" name="emp_desig" id="txt2" required></td>
             </tr>
         </table>
         <button type="submit">Submit</button>
