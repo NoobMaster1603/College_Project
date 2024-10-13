@@ -1,15 +1,9 @@
 from django.shortcuts import render,redirect
-from django.http import HttpResponse
-from django.template import loader
 from .forms import Employ_form
-from .models import Employ_info
-
-# def employee(request):
-#     template = loader.get_template('home.html')
-#     return HttpResponse(template.render())
+from .models import Djemployee
 
 def form_view (request):
-    if request.method == 'Post':
+    if request.method == "POST":
         emp = Employ_form(request.POST)
         if emp.is_valid():
             #access data from hmtl
@@ -18,12 +12,12 @@ def form_view (request):
             e_desig = emp.cleaned_data['emp_desig']
             
             #adding data into database table
-            employ_info = Employ_info(emp_id = e_id, emp_name = e_name, emp_desig = e_desig)
-            employ_info.save()
+            djemployee = Djemployee(emp_id = e_id, emp_name = e_name, emp_desig = e_desig)
+            djemployee.save()
             
             return redirect('success')
         else:
-            print(emp.errors)
+            print("Form errors: ",emp.errors)
     else:
         emp = Employ_form()
         

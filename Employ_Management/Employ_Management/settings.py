@@ -55,7 +55,7 @@ ROOT_URLCONF = 'Employ_Management.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,13 +75,13 @@ WSGI_APPLICATION = 'Employ_Management.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'djemploy',
-        'USER' : 'root',
-        'PASSWORD' : 'CrowdStrike',
-        'HOST' : 'localhost',
-        'PORT' : '3306'
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "djemploy",
+        "USER" : "root",
+        "PASSWORD" : "CrowdStrike",
+        "HOST" : "localhost",
+        "PORT" : "3306"
     }
 }
 
