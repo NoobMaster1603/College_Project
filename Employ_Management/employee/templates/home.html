@@ -4,12 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Form</title>
+    {%load static %}
+    <link rel="stylesheet" href="{% static 'employee/home.css'%}">
 </head>
 <body>
-    <h1>Employee Form</h1>
-    <form method="POST">
+    <form method="post">
         {% csrf_token %}
-        {{ emp.as_p }}
+        <table>
+            <tr>
+                <td>Employee ID:</td>
+                <td><input type="number" name="emp_id" id="num1" required></td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="emp_name" id="txt1" required></td>
+            </tr>
+            <tr>
+                <td>Designation:</td>
+                <td><input type="text" name="emp_desig" id="txt2" required></td>
+            </tr>
+        </table>
         <button type="submit">Submit</button>
     </form>
 </body>
