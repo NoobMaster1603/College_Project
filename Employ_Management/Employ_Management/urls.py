@@ -20,8 +20,8 @@ from employee import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', include('employee.urls')),
-    path('home/', views.form_view,name = 'home'),
+    #path('home/', include('employee.urls')),
+    path('', views.form_view,name = 'home'),
     path('success/', views.success_view,name = 'success'),
 ]
  
